@@ -15,6 +15,7 @@
     "url": "git+https://github.com/BattlesnakeOfficial/starter-snake-javascript.git"
   },
   "dependencies": {
+    "chalk": "^5.4.1",
     "express": "^4.20.0",
     "starter-snake-javascript": "file:"
   }
