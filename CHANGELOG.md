@@ -21,3 +21,11 @@ Enabled useful GitHub workflows
 Implemented food-seeking logic (Manhattan distance)
 Handled head-to-head movements
 implemented editorconfig and prettier (default options)
+
+## [1.0.0] - 2025-05-12
+
+### Added
+
+Configured eslint and installed necessary plugins
+Linted the entire codebase
+Release version 1.0.0
