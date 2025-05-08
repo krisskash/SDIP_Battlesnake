@@ -1,6 +1,8 @@
 # Battlesnake - Software Development In Practice
 
-Using the official Battlesnake template written in JavaScript.
+## About
+
+We're using the official Battlesnake template written in JavaScript.
 [play.battlesnake.com](https://play.battlesnake.com).
 
 ![Battlesnake Logo](https://i.ibb.co/NMKHjbF/Starter-Snake-Git-Hub-Repos-Java-Script.png)
@@ -34,10 +36,10 @@ Open [localhost:8000](http://localhost:8000) in your browser and you should see
 ```json
 {
   "apiversion": "1",
-  "author": "",
-  "color": "#888888",
-  "head": "default",
-  "tail": "default"
+  "author": "B1G_THAN0S, L1L 4GGELOS, CHR1S SL1M3",
+  "color": "#D2042D",
+  "head": "Silly",
+  "tail": "Bolt"
 }
 ```
 
@@ -45,11 +47,8 @@ Open [localhost:8000](http://localhost:8000) in your browser and you should see
 
 Install the [Battlesnake CLI](https://github.com/BattlesnakeOfficial/rules/tree/main/cli)
 
-- You can [download compiled binaries here](https://github.com/BattlesnakeOfficial/rules/releases)
-- or [install as a go package](https://github.com/BattlesnakeOfficial/rules/tree/main/cli#installation) (requires Go 1.18 or higher)
-
 Command to run a local game
 
 ```sh
-battlesnake play -W 11 -H 11 --name 'JavaScript Starter Project' --url http://localhost:8000 -g solo --browser
+battlesnake play -W 11 -H 11 --name 'Terminator' --url http://localhost:8000 -g solo --browser
 ```
