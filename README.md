@@ -4,7 +4,7 @@ An official Battlesnake template written in JavaScript. Get started at [play.bat
 
 ![Battlesnake Logo](https://media.battlesnake.com/social/StarterSnakeGitHubRepos_JavaScript.png)
 
-This project is a great starting point for anyone wanting to program their first Battlesnake in JavaScript. It can be run locally or easily deployed to a cloud provider of your choosing. See the [Battlesnake API Docs](https://docs.battlesnake.com/api) for more detail. 
+This project is a great starting point for anyone wanting to program their first Battlesnake in JavaScript. It can be run locally or easily deployed to a cloud provider of your choosing. See the [Battlesnake API Docs](https://docs.battlesnake.com/api) for more detail.
 
 [![Run on Replit](https://repl.it/badge/github/BattlesnakeOfficial/starter-snake-javascript)](https://replit.com/@Battlesnake/starter-snake-javascript)
 
@@ -35,14 +35,21 @@ Running Battlesnake at http://0.0.0.0:8000
 Open [localhost:8000](http://localhost:8000) in your browser and you should see
 
 ```json
-{"apiversion":"1","author":"","color":"#888888","head":"default","tail":"default"}
+{
+  "apiversion": "1",
+  "author": "",
+  "color": "#888888",
+  "head": "default",
+  "tail": "default"
+}
 ```
 
 ## Play a Game Locally
 
 Install the [Battlesnake CLI](https://github.com/BattlesnakeOfficial/rules/tree/main/cli)
-* You can [download compiled binaries here](https://github.com/BattlesnakeOfficial/rules/releases)
-* or [install as a go package](https://github.com/BattlesnakeOfficial/rules/tree/main/cli#installation) (requires Go 1.18 or higher)
+
+- You can [download compiled binaries here](https://github.com/BattlesnakeOfficial/rules/releases)
+- or [install as a go package](https://github.com/BattlesnakeOfficial/rules/tree/main/cli#installation) (requires Go 1.18 or higher)
 
 Command to run a local game
 

@@ -10,7 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+
 Pull request template
 Change log file
 Connected project board
 Enabled useful GitHub workflows
+
+### Added
+
+Implemented food-seeking logic (Manhattan distance)
+Handled head-to-head movements
+implemented editorconfig and prettier (default options)
