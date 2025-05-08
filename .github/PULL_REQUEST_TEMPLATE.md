@@ -7,6 +7,6 @@ Enable useful GitHub workflows **DONE**
 Implement food-seeking logic (Manhattan distance) **DONE**
 Handle head-to-head movements **DONE**
 Set up editorconfig and prettier (default options) **DONE**
-Configure eslint and install necessary plugins
-Lint the entire codebase
-Release version 1.0.0
+Configure eslint and install necessary plugins **DONE**
+Lint the entire codebase **DONE**
+Release version 1.0.0 **DONE**
