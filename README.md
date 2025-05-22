@@ -50,5 +50,7 @@ Install the [Battlesnake CLI](https://github.com/BattlesnakeOfficial/rules/tree/
 Command to run a local game
 
 ```sh
-battlesnake play -W 11 -H 11 --name 'Terminator' --url http://localhost:8000 -g solo --browser
+battlesnake play -W 7 -H 7 --name 'Terminator' --url http://localhost:8000 -g solo --browser
+
+battlesnake play --width 9 --height 9 --name Terminator1 --url http://localhost:8000 --name Terminator2 --url http://localhost:8000 --browser
 ```

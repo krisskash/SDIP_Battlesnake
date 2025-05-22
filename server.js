@@ -44,7 +44,7 @@ export function move(gameState) {
   return { move: 'down' };
 }
 
-export default function runServer(handlers) {
+export default function runServer(handlers, port = 8000, host = '0.0.0.0') {
   const app = express();
   app.use(express.json());
 
@@ -71,10 +71,9 @@ export default function runServer(handlers) {
     next();
   });
 
-  const host = '0.0.0.0';
-  const port = process.env.PORT || 8000;
-
-  app.listen(port, host, () => {
+  const server = app.listen(port, host, () => {
     console.log(`Running Battlesnake at http://${host}:${port}...`);
   });
+
+  return server; // Return the server instance so it can be closed
 }

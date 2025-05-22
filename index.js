@@ -10,8 +10,10 @@
 // To get you started we've included code to prevent your Battlesnake from moving backwards.
 // For more info see docs.battlesnake.com
 
+// Import the flood fill functions
 import runServer from './server.js';
 import chalk from 'chalk';
+import { calculateOpenSpace } from './floodFill.js';
 
 // info is called when you create your Battlesnake on play.battlesnake.com
 // and controls your Battlesnake's appearance
@@ -91,23 +93,24 @@ export function seekFood(gameState) {
   const myHead = gameState.you.body[0];
   const food = gameState.board.food;
 
-  console.log('Snake Head:', myHead); 
-  console.log('Food:', food); 
-
+  // If there's no food, return null
   if (food.length === 0) {
     return null;
   }
 
-  const closestFood = food.reduce((closest, current) => {
-    const closestDistance =
-      Math.abs(closest.x - myHead.x) + Math.abs(closest.y - myHead.y);
-    const currentDistance =
-      Math.abs(current.x - myHead.x) + Math.abs(current.y - myHead.y);
-    return currentDistance < closestDistance ? current : closest;
+  // Find closest food using Manhattan distance
+  let closestFood = null;
+  let minDistance = Infinity;
+
+  food.forEach((f) => {
+    const distance = Math.abs(f.x - myHead.x) + Math.abs(f.y - myHead.y);
+    if (distance < minDistance) {
+      minDistance = distance;
+      closestFood = f;
+    }
   });
 
-  console.log('Closest Food:', closestFood);
-
+  // Determine direction to move towards food
   if (closestFood.x < myHead.x) {
     return 'left';
   } else if (closestFood.x > myHead.x) {
@@ -134,6 +137,7 @@ function move(gameState) {
   const boardWidth = gameState.board.width;
   const boardHeight = gameState.board.height;
   const myHead = gameState.you.body[0];
+  const myLength = gameState.you.body.length;
 
   // Prevent out-of-bounds moves
   if (myHead.x + 1 >= boardWidth) {
@@ -171,7 +175,23 @@ function move(gameState) {
     (s) => s.id !== gameState.you.id
   );
   opponents.forEach((snake) => {
-    snake.body.forEach((segment) => {
+    // Get the snake's head and tail positions
+    const opponentHead = snake.body[0];
+    const opponentTail = snake.body[snake.body.length - 1];
+    
+    // Check if opponent might eat food in next move
+    const mightEatFood = gameState.board.food.some(food => 
+      (Math.abs(food.x - opponentHead.x) + Math.abs(food.y - opponentHead.y)) === 1
+    );
+    
+    // Process each segment of the opponent snake
+    snake.body.forEach((segment, index) => {
+      // Skip the tail segment if the snake won't eat food (tail will move next turn)
+      if (index === snake.body.length - 1 && !mightEatFood) {
+        return; // Skip marking this segment as unsafe
+      }
+      
+      // Mark other segments as unsafe
       if (segment.x === myHead.x + 1 && segment.y === myHead.y) {
         isMoveSafe.right = false;
       }
@@ -185,27 +205,75 @@ function move(gameState) {
         isMoveSafe.down = false;
       }
     });
+
+    // Check for head-to-head collisions
+    const opponentLength = snake.body.length;
+
+    if (opponentHead.x === myHead.x + 1 && opponentHead.y === myHead.y) {
+      // Even when equal length, avoid head-to-head collisions
+      isMoveSafe.right = false;
+    }
+    if (opponentHead.x === myHead.x - 1 && opponentHead.y === myHead.y) {
+      // Even when equal length, avoid head-to-head collisions
+      isMoveSafe.left = false;
+    }
+    if (opponentHead.x === myHead.x && opponentHead.y === myHead.y + 1) {
+      // Even when equal length, avoid head-to-head collisions
+      isMoveSafe.up = false;
+    }
+    if (opponentHead.x === myHead.x && opponentHead.y === myHead.y - 1) {
+      // Even when equal length, avoid head-to-head collisions
+      isMoveSafe.down = false;
+    }
   });
 
   if (process.env.DEBUG === 'true') {
     console.log('Safe Moves Before Filtering:', isMoveSafe);
   }
 
-  // Use seekFood only if the move is safe
+  // Calculate open space in each direction
+  const openSpace = calculateOpenSpace(gameState);
+  
+  if (process.env.DEBUG === 'true') {
+    console.log('Open Space in Each Direction:', openSpace);
+  }
+
+  // Use seekFood only if the move is safe and has decent open space
   const foodDirection = seekFood(gameState);
-  if (foodDirection && isMoveSafe[foodDirection]) {
+  if (foodDirection && isMoveSafe[foodDirection] && openSpace[foodDirection] > 3) {
     console.log(`Seeking food: ${foodDirection}`);
     return { move: foodDirection };
   }
 
-  // Fallback to a random safe move
-  const safeMoves = Object.keys(isMoveSafe).filter((key) => isMoveSafe[key]);
-  const nextMove =
-    safeMoves.length > 0
-      ? safeMoves[Math.floor(Math.random() * safeMoves.length)]
-      : 'down';
-  console.log(`MOVE ${gameState.turn}: ${nextMove}`);
-  return { move: nextMove };
+  // Find the move with the most open space
+  let bestMove = null;
+  let maxSpace = -1;
+
+  Object.keys(isMoveSafe).forEach(move => {
+    if (isMoveSafe[move] && openSpace[move] > maxSpace) {
+      maxSpace = openSpace[move];
+      bestMove = move;
+    }
+  });
+
+  // If we found a move with open space, use it
+  if (bestMove !== null) {
+    console.log(`MOVE ${gameState.turn}: ${bestMove} (open space: ${maxSpace})`);
+    return { move: bestMove };
+  }
+
+  // Fall back to the priority-based system if no move has open space
+  const movePriority = ['up', 'right', 'down', 'left']; 
+  for (const move of movePriority) {
+    if (isMoveSafe[move]) {
+      console.log(`MOVE ${gameState.turn}: ${move} (fallback)`);
+      return { move };
+    }
+  }
+
+  // If no safe moves, move down
+  console.log('No safe moves available. Moving down as a last resort.');
+  return { move: 'down' };
 }
 
 runServer({
