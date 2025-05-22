@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1747930352693" clover="3.2.0">
-  <project timestamp="1747930352693" name="All files">
-    <metrics statements="37" coveredstatements="19" conditionals="14" coveredconditionals="6" methods="10" coveredmethods="3" elements="61" coveredelements="28" complexity="0" loc="37" ncloc="37" packages="1" files="1" classes="1"/>
-    <file name="server.js" path="C:\Users\leiva\Desktop\Battlesnake\SDIP_Battlesnake\server.js">
-      <metrics statements="37" coveredstatements="19" conditionals="14" coveredconditionals="6" methods="10" coveredmethods="3"/>
+<coverage generated="1747936415937" clover="3.2.0">
+  <project timestamp="1747936415937" name="All files">
+    <metrics statements="78" coveredstatements="59" conditionals="41" coveredconditionals="31" methods="17" coveredmethods="10" elements="136" coveredelements="100" complexity="0" loc="78" ncloc="78" packages="1" files="2" classes="2"/>
+    <file name="floodFill.js" path="C:\Website\SDIP_Battlesnake\floodFill.js">
+      <metrics statements="42" coveredstatements="41" conditionals="27" coveredconditionals="26" methods="7" coveredmethods="7"/>
+      <line num="8" count="13" type="stmt"/>
+      <line num="9" count="13" type="stmt"/>
+      <line num="12" count="13" type="stmt"/>
+      <line num="15" count="13" type="stmt"/>
+      <line num="19" count="1943" type="stmt"/>
+      <line num="20" count="15139" type="cond" truecount="2" falsecount="0"/>
+      <line num="26" count="2284" type="cond" truecount="5" falsecount="0"/>
+      <line num="30" count="13" type="stmt"/>
+      <line num="31" count="885" type="stmt"/>
+      <line num="32" count="885" type="stmt"/>
+      <line num="35" count="885" type="cond" truecount="2" falsecount="0"/>
+      <line num="38" count="571" type="stmt"/>
+      <line num="41" count="571" type="stmt"/>
+      <line num="48" count="571" type="stmt"/>
+      <line num="49" count="2284" type="cond" truecount="4" falsecount="0"/>
+      <line num="50" count="872" type="stmt"/>
+      <line num="56" count="13" type="stmt"/>
+      <line num="65" count="4" type="stmt"/>
+      <line num="66" count="4" type="stmt"/>
+      <line num="69" count="4" type="stmt"/>
+      <line num="77" count="4" type="stmt"/>
+      <line num="80" count="16" type="cond" truecount="4" falsecount="0"/>
+      <line num="82" count="4" type="stmt"/>
+      <line num="83" count="4" type="stmt"/>
+      <line num="85" count="4" type="stmt"/>
+      <line num="86" count="4" type="stmt"/>
+      <line num="88" count="4" type="stmt"/>
+      <line num="89" count="4" type="stmt"/>
+      <line num="91" count="4" type="stmt"/>
+      <line num="92" count="4" type="stmt"/>
+      <line num="96" count="16" type="cond" truecount="5" falsecount="1"/>
+      <line num="98" count="0" type="stmt"/>
+      <line num="102" count="16" type="stmt"/>
+      <line num="103" count="30" type="stmt"/>
+      <line num="104" count="100" type="cond" truecount="4" falsecount="0"/>
+      <line num="105" count="5" type="stmt"/>
+      <line num="111" count="11" type="stmt"/>
+      <line num="115" count="4" type="stmt"/>
+      <line num="116" count="4" type="stmt"/>
+      <line num="117" count="4" type="stmt"/>
+      <line num="118" count="4" type="stmt"/>
+      <line num="120" count="4" type="stmt"/>
+    </file>
+    <file name="server.js" path="C:\Website\SDIP_Battlesnake\server.js">
+      <metrics statements="36" coveredstatements="18" conditionals="14" coveredconditionals="5" methods="10" coveredmethods="3"/>
       <line num="5" count="1" type="stmt"/>
       <line num="15" count="2" type="stmt"/>
       <line num="16" count="2" type="stmt"/>
@@ -38,9 +83,8 @@
       <line num="70" count="0" type="stmt"/>
       <line num="71" count="0" type="stmt"/>
       <line num="74" count="1" type="stmt"/>
-      <line num="75" count="1" type="cond" truecount="2" falsecount="0"/>
-      <line num="77" count="1" type="stmt"/>
-      <line num="78" count="0" type="stmt"/>
+      <line num="75" count="0" type="stmt"/>
+      <line num="78" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

@@ -39,3 +39,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Added ability to move into other snakes' tails when safe
 - Created comprehensive test suite for movement algorithms
 - Integrated flood fill with food-seeking behavior
+
+## [1.1.1] - 2025-05-22
+
+### Added
+
+- Reached 50% code coverage with automatic tests
+- Edit in customization
