@@ -1,8 +1,8 @@
 import express from 'express';
 
 
-export function seekFood(gameState) {
- 
+export function move(gameState) {
+  
 }
 
 export default function runServer(handlers) {
