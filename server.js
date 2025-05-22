@@ -1,5 +1,16 @@
 import express from 'express';
 
+// Define the info function
+export function info() {
+  return {
+    apiversion: '1',
+    author: 'B1G_THAN0S, L1L 4GGELOS, CHR1S SL1M3',
+    color: '#D2042D', // Cherry Red
+    head: 'silly', // Silly face head
+    tail: 'bolt', // Lightning bolt tail
+  };
+}
+
 export function move(gameState) {
   const myHead = gameState.you.body[0];
   const food = gameState.board.food;
