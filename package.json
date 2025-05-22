@@ -9,11 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "jest",
-<<<<<<< HEAD
     "format": "prettier --write."
-=======
-    "format": "prettier --write ."
->>>>>>> e09c8c58303d138bc782e8f0e563997c7b5f7fb7
   },
   "repository": {
     "type": "git",
@@ -32,6 +28,7 @@
     "eslint-plugin-sonarjs": "^3.0.2",
     "eslint-plugin-unicorn": "^59.0.1",
     "globals": "^16.1.0",
+    "jest": "^29.7.0",
     "prettier": "^3.5.3"
   }
 }
