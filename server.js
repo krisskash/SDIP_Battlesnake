@@ -11,24 +11,11 @@ export function move(gameState) {
 
   // Prevent out-of-bounds moves
   const isMoveSafe = {
-    up: true,
-    down: true,
-    left: true,
-    right: true,
+    up: myHead.y + 1 < boardHeight, // Prevent moving up if at the top edge
+    down: myHead.y - 1 >= 0, // Prevent moving down if at the bottom edge
+    left: myHead.x - 1 >= 0, // Prevent moving left if at the left edge
+    right: myHead.x + 1 < boardWidth, // Prevent moving right if at the right edge
   };
-
-  if (myHead.x + 1 >= boardWidth) {
-    isMoveSafe.right = false;
-  }
-  if (myHead.x - 1 < 0) {
-    isMoveSafe.left = false;
-  }
-  if (myHead.y + 1 >= boardHeight) {
-    isMoveSafe.up = false;
-  }
-  if (myHead.y - 1 < 0) {
-    isMoveSafe.down = false;
-  }
 
   // Find the closest food by Manhattan distance
   const closestFood = food.reduce((closest, current) => {
