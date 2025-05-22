@@ -1,21 +1,13 @@
+import express from 'express';
+
 export function move(gameState) {
   const myHead = gameState.you.body[0];
   const food = gameState.board.food;
-  const boardWidth = gameState.board.width;
-  const boardHeight = gameState.board.height;
 
   // If there's no food, return a default move (e.g., 'down')
   if (food.length === 0) {
     return { move: 'down' };
   }
-
-  // Prevent out-of-bounds moves
-  const isMoveSafe = {
-    up: myHead.y + 1 < boardHeight, // Prevent moving up if at the top edge
-    down: myHead.y - 1 >= 0, // Prevent moving down if at the bottom edge
-    left: myHead.x - 1 >= 0, // Prevent moving left if at the left edge
-    right: myHead.x + 1 < boardWidth, // Prevent moving right if at the right edge
-  };
 
   // Find the closest food by Manhattan distance
   const closestFood = food.reduce((closest, current) => {
@@ -27,22 +19,51 @@ export function move(gameState) {
   });
 
   // Decide the direction towards the closest food
-  if (closestFood.x < myHead.x && isMoveSafe.left) {
+  if (closestFood.x < myHead.x) {
     return { move: 'left' };
-  } else if (closestFood.x > myHead.x && isMoveSafe.right) {
+  } else if (closestFood.x > myHead.x) {
     return { move: 'right' };
-  } else if (closestFood.y < myHead.y && isMoveSafe.down) {
+  } else if (closestFood.y < myHead.y) {
     return { move: 'down' };
-  } else if (closestFood.y > myHead.y && isMoveSafe.up) {
+  } else if (closestFood.y > myHead.y) {
     return { move: 'up' };
   }
 
-  // Fallback to a random safe move
-  const safeMoves = Object.keys(isMoveSafe).filter((key) => isMoveSafe[key]);
-  const nextMove =
-    safeMoves.length > 0
-      ? safeMoves[Math.floor(Math.random() * safeMoves.length)]
-      : 'down';
+  // Fallback to a default move
+  return { move: 'down' };
+}
 
-  return { move: nextMove };
+export default function runServer(handlers) {
+  const app = express();
+  app.use(express.json());
+
+  app.get('/', (req, res) => {
+    res.send(handlers.info());
+  });
+
+  app.post('/start', (req, res) => {
+    handlers.start(req.body);
+    res.send('ok');
+  });
+
+  app.post('/move', (req, res) => {
+    res.send(handlers.move(req.body));
+  });
+
+  app.post('/end', (req, res) => {
+    handlers.end(req.body);
+    res.send('ok');
+  });
+
+  app.use(function (req, res, next) {
+    res.set('Server', 'battlesnake/github/starter-snake-javascript');
+    next();
+  });
+
+  const host = '0.0.0.0';
+  const port = process.env.PORT || 8000;
+
+  app.listen(port, host, () => {
+    console.log(`Running Battlesnake at http://${host}:${port}...`);
+  });
 }
