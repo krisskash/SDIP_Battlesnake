@@ -9,7 +9,11 @@
   "scripts": {
     "start": "node index.js",
     "test": "jest",
+<<<<<<< HEAD
     "format": "prettier --write."
+=======
+    "format": "prettier --write ."
+>>>>>>> e09c8c58303d138bc782e8f0e563997c7b5f7fb7
   },
   "repository": {
     "type": "git",

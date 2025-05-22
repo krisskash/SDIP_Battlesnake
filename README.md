@@ -1,12 +1,11 @@
-# Battlesnake JavaScript Starter Project
+# Battlesnake - Software Development In Practice
 
-An official Battlesnake template written in JavaScript. Get started at [play.battlesnake.com](https://play.battlesnake.com).
+## About
 
-![Battlesnake Logo](https://media.battlesnake.com/social/StarterSnakeGitHubRepos_JavaScript.png)
+We're using the official Battlesnake template written in JavaScript.
+[play.battlesnake.com](https://play.battlesnake.com).
 
-This project is a great starting point for anyone wanting to program their first Battlesnake in JavaScript. It can be run locally or easily deployed to a cloud provider of your choosing. See the [Battlesnake API Docs](https://docs.battlesnake.com/api) for more detail.
-
-[![Run on Replit](https://repl.it/badge/github/BattlesnakeOfficial/starter-snake-javascript)](https://replit.com/@Battlesnake/starter-snake-javascript)
+![Battlesnake Logo](https://i.ibb.co/NMKHjbF/Starter-Snake-Git-Hub-Repos-Java-Script.png)
 
 ## Technologies Used
 
@@ -37,10 +36,10 @@ Open [localhost:8000](http://localhost:8000) in your browser and you should see
 ```json
 {
   "apiversion": "1",
-  "author": "",
-  "color": "#888888",
-  "head": "default",
-  "tail": "default"
+  "author": "B1G_THAN0S, L1L 4GGELOS, CHR1S SL1M3",
+  "color": "#D2042D",
+  "head": "Silly",
+  "tail": "Bolt"
 }
 ```
 
@@ -48,17 +47,8 @@ Open [localhost:8000](http://localhost:8000) in your browser and you should see
 
 Install the [Battlesnake CLI](https://github.com/BattlesnakeOfficial/rules/tree/main/cli)
 
-- You can [download compiled binaries here](https://github.com/BattlesnakeOfficial/rules/releases)
-- or [install as a go package](https://github.com/BattlesnakeOfficial/rules/tree/main/cli#installation) (requires Go 1.18 or higher)
-
 Command to run a local game
 
 ```sh
-battlesnake play -W 11 -H 11 --name 'JavaScript Starter Project' --url http://localhost:8000 -g solo --browser
+battlesnake play -W 11 -H 11 --name 'Terminator' --url http://localhost:8000 -g solo --browser
 ```
-
-## Next Steps
-
-Continue with the [Battlesnake Quickstart Guide](https://docs.battlesnake.com/quickstart) to customize and improve your Battlesnake's behavior.
-
-**Note:** To play games on [play.battlesnake.com](https://play.battlesnake.com) you'll need to deploy your Battlesnake to a live web server OR use a port forwarding tool like [ngrok](https://ngrok.com/) to access your server locally.
