@@ -1,3 +1,5 @@
+import { move } from './server.js';  // Adjust the path based on where your server.js is located
+
 test('should prevent out-of-bounds moves', () => {
   const gameState = {
     you: {
