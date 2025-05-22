@@ -1,7 +1,8 @@
-import { info } from './server.js';
+import runServer from './server.js';
 
 describe('info()', () => {
   it('should return the correct Battlesnake info', () => {
+    const { info } = runServer({});
     const result = info();
 
     expect(result).toHaveProperty('apiversion', '1');
