@@ -87,9 +87,12 @@ function printBoard(gameState) {
 
 // This function calculates the closest food based on Manhattan distance
 // and returns the cardinal direction to move towards it.
-function seekFood(gameState) {
+export function seekFood(gameState) {
   const myHead = gameState.you.body[0];
   const food = gameState.board.food;
+
+  console.log('Snake Head:', myHead); 
+  console.log('Food:', food); 
 
   if (food.length === 0) {
     return null;
@@ -102,6 +105,8 @@ function seekFood(gameState) {
       Math.abs(current.x - myHead.x) + Math.abs(current.y - myHead.y);
     return currentDistance < closestDistance ? current : closest;
   });
+
+  console.log('Closest Food:', closestFood);
 
   if (closestFood.x < myHead.x) {
     return 'left';
