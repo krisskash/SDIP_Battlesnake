@@ -1,8 +1,36 @@
 import express from 'express';
 
-
 export function move(gameState) {
-  
+  const myHead = gameState.you.body[0];
+  const food = gameState.board.food;
+
+  // If there's no food, return a default move (e.g., 'down')
+  if (food.length === 0) {
+    return { move: 'down' };
+  }
+
+  // Find the closest food by Manhattan distance
+  const closestFood = food.reduce((closest, current) => {
+    const closestDistance =
+      Math.abs(closest.x - myHead.x) + Math.abs(closest.y - myHead.y);
+    const currentDistance =
+      Math.abs(current.x - myHead.x) + Math.abs(current.y - myHead.y);
+    return currentDistance < closestDistance ? current : closest;
+  });
+
+  // Decide the direction towards the closest food
+  if (closestFood.x < myHead.x) {
+    return { move: 'left' };
+  } else if (closestFood.x > myHead.x) {
+    return { move: 'right' };
+  } else if (closestFood.y < myHead.y) {
+    return { move: 'down' };
+  } else if (closestFood.y > myHead.y) {
+    return { move: 'up' };
+  }
+
+  // Fallback to a default move
+  return { move: 'down' };
 }
 
 export default function runServer(handlers) {
