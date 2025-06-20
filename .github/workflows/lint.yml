@@ -1,4 +1,4 @@
-name: Lint Code
+name: Lint Code And Prettier Formatting Check
 
 on:
   pull_request:
