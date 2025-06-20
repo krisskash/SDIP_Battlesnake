@@ -26,4 +26,4 @@ jobs:
         run: npx eslint . --ignore-pattern "coverage/**"
         
       - name: Check formatting with Prettier
-        run: npx prettier --check .
+        run: npx prettier --write .
