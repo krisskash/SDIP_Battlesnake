@@ -1,27 +1,19 @@
-name: Lint and Format
+name: Lint Code
 
 on:
   pull_request:
-    branches: [main, develop]
+    branches: [main, dev]
+  push:
+    branches: [main, dev]
 
 jobs:
   lint:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
-
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
-
-      - name: Run ESLint
-        run: npx eslint . --ext .js
-
-      - name: Run Prettier check
-        run: npx prettier . --check
+      - run: npm install
+      - run: npm run format -- --check
+      - run: npx eslint .
