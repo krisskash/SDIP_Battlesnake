@@ -1,4 +1,4 @@
-name: Test Coverage
+name: Test Coverage at 50% Minimum
 
 on:
   pull_request:
@@ -26,7 +26,7 @@ jobs:
         run: npm install
 
       - name: Run tests with coverage
-        run: npm test
+        run: npm test --coverage
 
       - name: Check coverage threshold
         run: |

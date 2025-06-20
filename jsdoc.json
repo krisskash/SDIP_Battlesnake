@@ -1,0 +1,18 @@
+{
+  "source": {
+    "include": ["./"],
+    "exclude": ["node_modules", "coverage", "dist", ".github"],
+    "includePattern": ".+\\.js$"
+  },
+  "opts": {
+    "destination": "./docs",
+    "recurse": true,
+    "template": "node_modules/clean-jsdoc-theme",
+    "readme": "./README.md"
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true
+  }
+}

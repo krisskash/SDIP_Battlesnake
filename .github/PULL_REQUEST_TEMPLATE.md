@@ -19,3 +19,11 @@
 - Reach at least 50% coverage of your projects with automatic tests and maintain it till the end of the project These do not need to be written with TDD **DONE**
 - Hotfix containing a change to customisation: Change whatever you want, even one thing, we will evaluate the hotfix process only **DONE**
 - Minor release (this time going up one minor version only, so for example 1.1.0 -> 1.2.0) **DONE**
+
+## Iteration 4 (Due: 20/06/2025)
+
+-
+-
+-
+-
+-

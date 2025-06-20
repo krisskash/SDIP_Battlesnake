@@ -1,4 +1,4 @@
-import { info } from './server.js';
+import { info } from '../server.js';
 
 describe('info()', () => {
   it('should return the correct Battlesnake info', () => {
