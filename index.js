@@ -238,6 +238,40 @@ function move(gameState) {
     console.log('Open Space in Each Direction:', openSpace);
   }
 
+  
+  // Attempt to hunt smaller snakes
+  let target = null;
+  let minDistance = Infinity;
+
+  opponents.forEach(snake => {
+    if (snake.body.length < myLength) {
+      const dx = Math.abs(myHead.x - snake.body[0].x);
+      const dy = Math.abs(myHead.y - snake.body[0].y);
+      const dist = dx + dy;
+      if (dist < minDistance && dist <= 3) {
+        target = snake.body[0];
+        minDistance = dist;
+      }
+    }
+  });
+
+  if (target) {
+    const dx = target.x - myHead.x;
+    const dy = target.y - myHead.y;
+    const moveOrder = [];
+    if (dx > 0) moveOrder.push('right');
+    if (dx < 0) moveOrder.push('left');
+    if (dy > 0) moveOrder.push('up');
+    if (dy < 0) moveOrder.push('down');
+
+    for (const move of moveOrder) {
+      if (isMoveSafe[move] && openSpace[move] > 3) {
+        console.log(`Hunting smaller snake: ${move}`);
+        return { move };
+      }
+    }
+  }
+
   // Use seekFood only if the move is safe and has decent open space
   const foodDirection = seekFood(gameState);
   if (foodDirection && isMoveSafe[foodDirection] && openSpace[foodDirection] > 3) {
