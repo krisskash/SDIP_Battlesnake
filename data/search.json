@@ -1,0 +1,1 @@
+{"list":[{"title":"calculateOpenSpace","link":"<a href=\"global.html#calculateOpenSpace\">calculateOpenSpace</a>","description":"<p>Calculate open space in each direction from the snake's head</p>"},{"title":"floodFill","link":"<a href=\"global.html#floodFill\">floodFill</a>","description":"<p>Performs a flood fill algorithm to count accessible cells from a position</p>"}]}
