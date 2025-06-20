@@ -48,10 +48,7 @@
     "verbose": true,
     "collectCoverage": true,
     "coverageDirectory": "coverage",
-    "coverageReporters": [
-      "text",
-      "lcov"
-    ],
+    "coverageReporters": ["text", "lcov"],
     "coverageProvider": "v8"
   }
 }

@@ -1,61 +1,68 @@
+
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Code coverage report for floodFill.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type="text/css">
-      .coverage-summary .sorter {
-        background-image: url(sort-arrow-sprite.png);
-      }
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
     </style>
-  </head>
-
-  <body>
-    <div class="wrapper">
-      <div class="pad1">
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
         <h1><a href="index.html">All files</a> floodFill.js</h1>
-        <div class="clearfix">
-          <div class="fl pad1y space-right2">
-            <span class="strong">98.34% </span>
-            <span class="quiet">Statements</span>
-            <span class="fraction">119/121</span>
-          </div>
-
-          <div class="fl pad1y space-right2">
-            <span class="strong">96.77% </span>
-            <span class="quiet">Branches</span>
-            <span class="fraction">30/31</span>
-          </div>
-
-          <div class="fl pad1y space-right2">
-            <span class="strong">100% </span>
-            <span class="quiet">Functions</span>
-            <span class="fraction">5/5</span>
-          </div>
-
-          <div class="fl pad1y space-right2">
-            <span class="strong">98.34% </span>
-            <span class="quiet">Lines</span>
-            <span class="fraction">119/121</span>
-          </div>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">98.4% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>123/125</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">96.77% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>30/31</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>5/5</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">98.4% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>123/125</span>
+            </div>
+        
+            
         </div>
         <p class="quiet">
-          Press <em>n</em> or <em>j</em> to go to the next uncovered block,
-          <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
         <template id="filterTemplate">
-          <div class="quiet">
-            Filter:
-            <input type="search" id="fileSearch" />
-          </div>
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
         </template>
-      </div>
-      <div class="status-line high"></div>
-      <pre><table class="coverage">
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
 <a name='L3'></a><a href='#L3'>3</a>
@@ -176,7 +183,12 @@
 <a name='L118'></a><a href='#L118'>118</a>
 <a name='L119'></a><a href='#L119'>119</a>
 <a name='L120'></a><a href='#L120'>120</a>
-<a name='L121'></a><a href='#L121'>121</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -273,6 +285,10 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
@@ -296,7 +312,8 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span></td><td class="text"><pre class="prettyprint lang-js">/**
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * Performs a flood fill algorithm to count accessible cells from a position
  * @param {Object} board - The game board
  * @param {Object} position - The starting position {x, y}
@@ -305,36 +322,36 @@
 export function floodFill(board, position) {
   const width = board.width;
   const height = board.height;
-  
+&nbsp;
   // Create a visited set using string keys like "x,y"
   const visited = new Set();
-  
+&nbsp;
   // Create a queue for BFS
   const queue = [position];
-  
+&nbsp;
   // Check if a position contains a snake body
   function hasSnake(x, y) {
-    return board.snakes.some(snake =&gt; 
-      snake.body.some(segment =&gt; segment.x === x &amp;&amp; segment.y === y)
+    return board.snakes.some((snake) =&gt;
+      snake.body.some((segment) =&gt; segment.x === x &amp;&amp; segment.y === y)
     );
   }
-  
+&nbsp;
   // Check if a position is valid (in bounds and not a snake)
   function isValid(x, y) {
     return x &gt;= 0 &amp;&amp; x &lt; width &amp;&amp; y &gt;= 0 &amp;&amp; y &lt; height &amp;&amp; !hasSnake(x, y);
   }
-  
+&nbsp;
   // BFS to fill and count cells
   while (queue.length &gt; 0) {
     const current = queue.shift();
     const key = `${current.x},${current.y}`;
-    
+&nbsp;
     // Skip if already visited
     if (visited.has(key)) continue;
-    
+&nbsp;
     // Mark as visited
     visited.add(key);
-    
+&nbsp;
     // Check all four directions
     const directions = [
       { x: current.x + 1, y: current.y }, // Right
@@ -342,14 +359,14 @@ export function floodFill(board, position) {
       { x: current.x, y: current.y + 1 }, // Up
       { x: current.x, y: current.y - 1 }, // Down
     ];
-    
+&nbsp;
     for (const dir of directions) {
       if (isValid(dir.x, dir.y) &amp;&amp; !visited.has(`${dir.x},${dir.y}`)) {
         queue.push(dir);
       }
     }
   }
-  
+&nbsp;
   // Return the count of visited cells
   return visited.size;
 }
@@ -362,19 +379,19 @@ export function floodFill(board, position) {
 export function calculateOpenSpace(gameState) {
   const myHead = gameState.you.body[0];
   const board = gameState.board;
-  
+&nbsp;
   // Store open space in each direction
   const openSpace = {
     up: 0,
     down: 0,
     left: 0,
-    right: 0
+    right: 0,
   };
-  
+&nbsp;
   // Check if a move in a direction is valid
   const checkMove = (direction) =&gt; {
     let testPos;
-    
+&nbsp;
     switch (direction) {
       case 'up':
         testPos = { x: myHead.x, y: myHead.y + 1 };
@@ -389,13 +406,17 @@ export function calculateOpenSpace(gameState) {
         testPos = { x: myHead.x + 1, y: myHead.y };
         break;
     }
-    
+&nbsp;
     // Check if the move would be out of bounds
-    if (testPos.x &lt; 0 || testPos.x &gt;= board.width || 
-        testPos.y &lt; 0 || testPos.y &gt;= board.height) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if (
+      testPos.x &lt; 0 ||
+      testPos.x &gt;= board.width ||
+      testPos.y &lt; 0 ||
+      testPos.y &gt;= board.height
+    ) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return 0;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    
+&nbsp;
     // Check if the move would hit a snake
     for (const snake of board.snakes) {
       for (const segment of snake.body) {
@@ -404,41 +425,36 @@ export function calculateOpenSpace(gameState) {
         }
       }
     }
-    
+&nbsp;
     // Calculate flood fill from this position
     return floodFill(board, testPos);
   };
-  
+&nbsp;
   // Calculate open space in each direction
   openSpace.up = checkMove('up');
   openSpace.down = checkMove('down');
   openSpace.left = checkMove('left');
   openSpace.right = checkMove('right');
-  
+&nbsp;
   return openSpace;
-}</pre></td></tr></table></pre>
+}
+&nbsp;</pre></td></tr></table></pre>
 
-      <div class="push"></div>
-      <!-- for sticky footer -->
-    </div>
-    <!-- /wrapper -->
-    <div class="footer quiet pad2 space-top1 center small">
-      Code coverage generated by
-      <a
-        href="https://istanbul.js.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >istanbul</a
-      >
-      at 2025-06-20T19:14:07.144Z
-    </div>
-    <script src="prettify.js"></script>
-    <script>
-      window.onload = function () {
-        prettyPrint();
-      };
-    </script>
-    <script src="sorter.js"></script>
-    <script src="block-navigation.js"></script>
-  </body>
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2025-06-20T19:39:04.323Z
+            </div>
+        <script src="prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="sorter.js"></script>
+        <script src="block-navigation.js"></script>
+    </body>
 </html>
+    
