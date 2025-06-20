@@ -7,10 +7,11 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
-    "format": "prettier --write ."
+  "start": "node index.js",
+  "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+  "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+  "format": "prettier --write .",
+  "install": "npm install --legacy-peer-deps"
   },
   "repository": {
     "type": "git",
