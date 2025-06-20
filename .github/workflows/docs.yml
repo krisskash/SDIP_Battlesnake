@@ -2,7 +2,7 @@ name: Generate JsDoc
 
 on:
   push:
-    branches: [main]
+    branches: [main, dev]
 
 jobs:
   docs:
