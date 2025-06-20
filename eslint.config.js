@@ -4,14 +4,14 @@ import unicorn from 'eslint-plugin-unicorn';
 
 export default [
   {
-    ignores: ["coverage/**", "node_modules/**", "dist/**"],
+    ignores: ['coverage/**', 'node_modules/**', 'dist/**'],
   },
   {
     files: ['**/*.js'],
     plugins: {
       'eslint-comments': eslintComments,
-      'sonarjs': sonarjs,
-      'unicorn': unicorn,
+      sonarjs: sonarjs,
+      unicorn: unicorn,
     },
     rules: {
       'eslint-comments/no-unlimited-disable': 'warn',

@@ -2,7 +2,7 @@ import runServer from './server.js';
 
 describe('runServer()', () => {
   let server;
-  
+
   // Clean up after each test
   afterEach(() => {
     // Close the server if it exists

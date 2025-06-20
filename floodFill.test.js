@@ -15,12 +15,12 @@ describe('Flood Fill Algorithm', () => {
       width: 5,
       height: 5,
       snakes: [], // No snakes on the board
-      food: []    // No food on the board
+      food: [], // No food on the board
     };
-    
+
     // Starting position at the center of the board
     const position = { x: 2, y: 2 };
-    
+
     // The flood fill should count all cells (5x5=25) since there are no obstacles
     const result = floodFill(board, position);
     expect(result).toBe(25);
@@ -41,15 +41,15 @@ describe('Flood Fill Algorithm', () => {
             { x: 1, y: 3 }, // Left and above our position
             { x: 2, y: 3 }, // Above our position
             { x: 3, y: 3 }, // Right and above our position
-          ]
-        }
+          ],
+        },
       ],
-      food: []
+      food: [],
     };
-    
+
     // Starting position below the snake obstacle
     const position = { x: 2, y: 2 };
-    
+
     // We expect 21 cells (25 total - 4 snake body segments)
     const result = floodFill(board, position);
     expect(result).toBe(21);
@@ -73,7 +73,7 @@ describe('Open Space Calculation', () => {
               { x: 2, y: 2 }, // head - current position
               { x: 2, y: 1 }, // body segment below head
               { x: 2, y: 0 }, // tail at bottom
-            ]
+            ],
           },
           {
             id: 'other-snake',
@@ -81,10 +81,10 @@ describe('Open Space Calculation', () => {
               { x: 4, y: 2 }, // opponent's head on the right side
               { x: 4, y: 1 }, // opponent's body segment
               { x: 4, y: 0 }, // opponent's tail
-            ]
-          }
+            ],
+          },
         ],
-        food: []
+        food: [],
       },
       you: {
         id: 'my-snake',
@@ -93,13 +93,13 @@ describe('Open Space Calculation', () => {
           { x: 2, y: 2 }, // head
           { x: 2, y: 1 }, // going down can't be a safe move because our body is there
           { x: 2, y: 0 }, // tail
-        ]
-      }
+        ],
+      },
     };
-    
+
     // Calculate available space in all four directions from our current position
     const result = calculateOpenSpace(gameState);
-    
+
     // All directions except down should have some space
     // Down would hit our own body, so it should be 0
     expect(result.up).toBeGreaterThan(0);
@@ -111,7 +111,7 @@ describe('Open Space Calculation', () => {
 
 // Test for tail-following functionality
 describe('Tail Following Behavior', () => {
-  test('should recognize when it is safe to move into another snake\'s tail position', () => {
+  test("should recognize when it is safe to move into another snake's tail position", () => {
     // Create a game state where our snake is next to another snake's tail
     const gameState = {
       board: {
@@ -123,8 +123,8 @@ describe('Tail Following Behavior', () => {
             body: [
               { x: 3, y: 3 }, // head
               { x: 2, y: 3 }, // body
-              { x: 1, y: 3 }  // tail
-            ]
+              { x: 1, y: 3 }, // tail
+            ],
           },
           {
             id: 'other-snake',
@@ -133,46 +133,46 @@ describe('Tail Following Behavior', () => {
               { x: 4, y: 1 }, // body
               { x: 5, y: 1 }, // body
               { x: 5, y: 2 }, // body
-              { x: 4, y: 2 }  // tail - right below our head
-            ]
-          }
+              { x: 4, y: 2 }, // tail - right below our head
+            ],
+          },
         ],
         food: [
-          { x: 6, y: 6 } // Food far away from the other snake
-        ]
+          { x: 6, y: 6 }, // Food far away from the other snake
+        ],
       },
       you: {
         id: 'my-snake',
         body: [
           { x: 3, y: 3 }, // head
           { x: 2, y: 3 }, // body
-          { x: 1, y: 3 }  // tail
-        ]
-      }
+          { x: 1, y: 3 }, // tail
+        ],
+      },
     };
-    
+
     // Check available space - down should be available since the other snake's
     // tail will move away (food is far from its head)
     const noFoodNearbyResult = calculateOpenSpace(gameState);
     expect(noFoodNearbyResult.down).toBeGreaterThan(0);
-    
+
     // Now modify the game state to put food near the other snake's head
     const gameStateWithFoodNearby = JSON.parse(JSON.stringify(gameState));
     gameStateWithFoodNearby.board.food = [
-      { x: 3, y: 0 } // Food just below the other snake's head
+      { x: 3, y: 0 }, // Food just below the other snake's head
     ];
-    
+
     // Check available space again - down should NOT be available since the other
     // snake will likely eat food and its tail won't move
     const foodNearbyResult = calculateOpenSpace(gameStateWithFoodNearby);
-    
+
     // The expected result depends on your floodFill implementation:
     // - If it accounts for tail movement directly: expect(foodNearbyResult.down).toBe(0)
     // - If food detection is handled in index.js: expect(foodNearbyResult.down).toBeGreaterThan(0)
-    
+
     // Compare both scenarios
     expect(foodNearbyResult.down <= noFoodNearbyResult.down).toBe(true);
-    
+
     // Other directions should be unchanged in both scenarios
     expect(foodNearbyResult.up).toBe(noFoodNearbyResult.up);
     expect(foodNearbyResult.left).toBe(noFoodNearbyResult.left);
@@ -192,16 +192,16 @@ describe('Tail Following Behavior', () => {
             body: [
               { x: 5, y: 5 }, // head
               { x: 5, y: 6 }, // body
-              { x: 5, y: 7 }  // tail
-            ]
+              { x: 5, y: 7 }, // tail
+            ],
           },
           {
             id: 'safe-tail-snake',
             body: [
               { x: 8, y: 5 }, // head far from food
               { x: 7, y: 5 }, // body
-              { x: 6, y: 5 }  // tail - to the right of our head
-            ]
+              { x: 6, y: 5 }, // tail - to the right of our head
+            ],
           },
           {
             id: 'unsafe-tail-snake',
@@ -209,33 +209,33 @@ describe('Tail Following Behavior', () => {
               { x: 5, y: 2 }, // head near food
               { x: 4, y: 2 }, // body
               { x: 4, y: 3 }, // body
-              { x: 4, y: 4 }  // tail - to the left of our head
-            ]
-          }
+              { x: 4, y: 4 }, // tail - to the left of our head
+            ],
+          },
         ],
         food: [
           { x: 5, y: 1 }, // Just below the second snake's head
-          { x: 10, y: 10 } // Far from everything
-        ]
+          { x: 10, y: 10 }, // Far from everything
+        ],
       },
       you: {
         id: 'my-snake',
         body: [
           { x: 5, y: 5 }, // head
           { x: 5, y: 6 }, // body
-          { x: 5, y: 7 }  // tail
-        ]
-      }
+          { x: 5, y: 7 }, // tail
+        ],
+      },
     };
-    
+
     const result = calculateOpenSpace(gameState);
-    
+
     // Up should have NO space (our own body is there)
     expect(result.up).toBe(0);
-    
+
     // Down should have space (nothing there)
     expect(result.down).toBeGreaterThan(0);
-    
+
     // Left and right depend on whether tail-following is implemented in floodFill.js
     // We won't test these directly, but you could add more expectations if you
     // implement tail-following in floodFill.js later

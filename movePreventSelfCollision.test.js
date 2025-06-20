@@ -2,16 +2,16 @@ import { move } from './server.js';
 
 test('should prevent self-collision', () => {
   const gameState = {
-    you: { 
+    you: {
       body: [
         { x: 2, y: 2 },
         { x: 2, y: 3 },
-        { x: 2, y: 4 }
-      ] // Snake body (head is at position 2,2)
+        { x: 2, y: 4 },
+      ], // Snake body (head is at position 2,2)
     },
     board: {
-      food: [{ x: 3, y: 2 }] // Food at position (3, 2)
-    }
+      food: [{ x: 3, y: 2 }], // Food at position (3, 2)
+    },
   };
 
   // Try to simulate a move where the snake's head would collide with its own body

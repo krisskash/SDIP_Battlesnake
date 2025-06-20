@@ -60,32 +60,35 @@ battlesnake play --width 9 --height 9 --name Terminator1 --url http://localhost:
 ## Snake Logic & Strategy
 
 Our snake logic includes:
--  Avoiding walls, self, and other snakes
--  Eating food when health is low
--  Seeking the largest open space (flood fill)
--  Avoiding head-to-head collisions with equal/longer snakes
--  Hunting smaller snakes (aggressive mode)
--  Tail-chasing logic (safe moves when no food is needed)
+
+- Avoiding walls, self, and other snakes
+- Eating food when health is low
+- Seeking the largest open space (flood fill)
+- Avoiding head-to-head collisions with equal/longer snakes
+- Hunting smaller snakes (aggressive mode)
+- Tail-chasing logic (safe moves when no food is needed)
 
 Open space is calculated with our custom `floodFill.js`.
 
 ---
 
-##  Documentation
+## Documentation
 
 We use JSDoc to document our code.  
 Generated HTML docs are available in the `/docs` folder.
 
 To regenerate:
+
 ```bash
 npx jsdoc -c jsdoc.json
 ```
 
 ---
 
-##  CI/CD & Linting
+## CI/CD & Linting
 
 We use GitHub Actions to:
+
 - Run unit tests (Jest)
 - Lint and format code (ESLint, Prettier)
 - Check test coverage (>50%)
@@ -93,7 +96,7 @@ We use GitHub Actions to:
 
 ---
 
-##  Testing
+## Testing
 
 Run tests using:
 
@@ -103,9 +106,10 @@ npm test
 
 ---
 
-##  GenAI Usage
+## GenAI Usage
 
 We used AI assistance (ChatGPT) to:
+
 - Generate JSDoc comments
 - Explain algorithmic steps
 

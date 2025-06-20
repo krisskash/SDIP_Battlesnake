@@ -178,19 +178,22 @@ function move(gameState) {
     // Get the snake's head and tail positions
     const opponentHead = snake.body[0];
     const opponentTail = snake.body[snake.body.length - 1];
-    
+
     // Check if opponent might eat food in next move
-    const mightEatFood = gameState.board.food.some(food => 
-      (Math.abs(food.x - opponentHead.x) + Math.abs(food.y - opponentHead.y)) === 1
+    const mightEatFood = gameState.board.food.some(
+      (food) =>
+        Math.abs(food.x - opponentHead.x) +
+          Math.abs(food.y - opponentHead.y) ===
+        1
     );
-    
+
     // Process each segment of the opponent snake
     snake.body.forEach((segment, index) => {
       // Skip the tail segment if the snake won't eat food (tail will move next turn)
       if (index === snake.body.length - 1 && !mightEatFood) {
         return; // Skip marking this segment as unsafe
       }
-      
+
       // Mark other segments as unsafe
       if (segment.x === myHead.x + 1 && segment.y === myHead.y) {
         isMoveSafe.right = false;
@@ -233,7 +236,7 @@ function move(gameState) {
 
   // Calculate open space in each direction
   const openSpace = calculateOpenSpace(gameState);
-  
+
   if (process.env.DEBUG === 'true') {
     console.log('Open Space in Each Direction:', openSpace);
   }
@@ -245,29 +248,43 @@ function move(gameState) {
   if (huntableSnakes.length > 0 && gameState.you.health > 30) {
     // Only hunt if we have decent health
     const closestPrey = huntableSnakes[0];
-    
+
     // Only hunt if the prey is reasonably close (within 5 moves)
     if (closestPrey.distance <= 5) {
       huntDirection = calculateHuntDirection(gameState, closestPrey);
-      console.log(`Hunting snake ${closestPrey.id} (length: ${closestPrey.length}) in direction: ${huntDirection}`);
+      console.log(
+        `Hunting snake ${closestPrey.id} (length: ${closestPrey.length}) in direction: ${huntDirection}`
+      );
     }
   }
 
   // Priority 1: Hunt smaller snakes (if safe and we have good health)
-  if (huntDirection && isMoveSafe[huntDirection] && openSpace[huntDirection] > 5) {
+  if (
+    huntDirection &&
+    isMoveSafe[huntDirection] &&
+    openSpace[huntDirection] > 5
+  ) {
     console.log(`Aggressive hunting: ${huntDirection}`);
     return { move: huntDirection };
   }
 
   // Priority 2: Seek food (existing logic)
   const foodDirection = seekFood(gameState);
-  if (foodDirection && isMoveSafe[foodDirection] && openSpace[foodDirection] > 3) {
+  if (
+    foodDirection &&
+    isMoveSafe[foodDirection] &&
+    openSpace[foodDirection] > 3
+  ) {
     console.log(`Seeking food: ${foodDirection}`);
     return { move: foodDirection };
   }
 
   // Priority 3: Hunt with lower safety threshold (if no food available)
-  if (huntDirection && isMoveSafe[huntDirection] && openSpace[huntDirection] > 2) {
+  if (
+    huntDirection &&
+    isMoveSafe[huntDirection] &&
+    openSpace[huntDirection] > 2
+  ) {
     console.log(`Opportunistic hunting: ${huntDirection}`);
     return { move: huntDirection };
   }
@@ -276,7 +293,7 @@ function move(gameState) {
   let bestMove = null;
   let maxSpace = -1;
 
-  Object.keys(isMoveSafe).forEach(move => {
+  Object.keys(isMoveSafe).forEach((move) => {
     if (isMoveSafe[move] && openSpace[move] > maxSpace) {
       maxSpace = openSpace[move];
       bestMove = move;
@@ -285,12 +302,14 @@ function move(gameState) {
 
   // If we found a move with open space, use it
   if (bestMove !== null) {
-    console.log(`MOVE ${gameState.turn}: ${bestMove} (open space: ${maxSpace})`);
+    console.log(
+      `MOVE ${gameState.turn}: ${bestMove} (open space: ${maxSpace})`
+    );
     return { move: bestMove };
   }
 
   // Fall back to the priority-based system if no move has open space
-  const movePriority = ['up', 'right', 'down', 'left']; 
+  const movePriority = ['up', 'right', 'down', 'left'];
   for (const move of movePriority) {
     if (isMoveSafe[move]) {
       console.log(`MOVE ${gameState.turn}: ${move} (fallback)`);
@@ -311,24 +330,25 @@ function move(gameState) {
 export function findHuntableSnakes(gameState) {
   const myLength = gameState.you.body.length;
   const myHead = gameState.you.body[0];
-  
+
   const huntableSnakes = [];
-  
-  gameState.board.snakes.forEach(snake => {
+
+  gameState.board.snakes.forEach((snake) => {
     if (snake.id !== gameState.you.id && snake.body.length < myLength) {
       const enemyHead = snake.body[0];
-      const distance = Math.abs(enemyHead.x - myHead.x) + Math.abs(enemyHead.y - myHead.y);
-      
+      const distance =
+        Math.abs(enemyHead.x - myHead.x) + Math.abs(enemyHead.y - myHead.y);
+
       huntableSnakes.push({
         id: snake.id,
         head: enemyHead,
         length: snake.body.length,
         distance: distance,
-        body: snake.body
+        body: snake.body,
       });
     }
   });
-  
+
   // Sort by distance (closest first)
   return huntableSnakes.sort((a, b) => a.distance - b.distance);
 }
@@ -342,54 +362,64 @@ export function findHuntableSnakes(gameState) {
 export function calculateHuntDirection(gameState, targetSnake) {
   const myHead = gameState.you.body[0];
   const targetHead = targetSnake.head;
-  
+
   // Calculate potential hunting moves
   const huntingMoves = [];
-  
+
   // Predict where the target snake might move
   const possibleTargetMoves = ['up', 'down', 'left', 'right'];
-  
-  possibleTargetMoves.forEach(move => {
+
+  possibleTargetMoves.forEach((move) => {
     let newTargetX = targetHead.x;
     let newTargetY = targetHead.y;
-    
-    switch(move) {
-      case 'up': newTargetY++; break;
-      case 'down': newTargetY--; break;
-      case 'left': newTargetX--; break;
-      case 'right': newTargetX++; break;
+
+    switch (move) {
+      case 'up':
+        newTargetY++;
+        break;
+      case 'down':
+        newTargetY--;
+        break;
+      case 'left':
+        newTargetX--;
+        break;
+      case 'right':
+        newTargetX++;
+        break;
     }
-    
+
     // Check if this predicted position is closer than current
-    const currentDistance = Math.abs(targetHead.x - myHead.x) + Math.abs(targetHead.y - myHead.y);
-    const predictedDistance = Math.abs(newTargetX - myHead.x) + Math.abs(newTargetY - myHead.y);
-    
+    const currentDistance =
+      Math.abs(targetHead.x - myHead.x) + Math.abs(targetHead.y - myHead.y);
+    const predictedDistance =
+      Math.abs(newTargetX - myHead.x) + Math.abs(newTargetY - myHead.y);
+
     if (predictedDistance < currentDistance) {
       huntingMoves.push({
         targetX: newTargetX,
         targetY: newTargetY,
-        distance: predictedDistance
+        distance: predictedDistance,
       });
     }
   });
-  
+
   // If no good hunting moves, just move towards current position
   if (huntingMoves.length === 0) {
     const dx = targetHead.x - myHead.x;
     const dy = targetHead.y - myHead.y;
-    
+
     if (Math.abs(dx) > Math.abs(dy)) {
       return dx > 0 ? 'right' : 'left';
     } else {
       return dy > 0 ? 'up' : 'down';
     }
   }
-  
+
   // Choose the closest predicted position
   const bestHunt = huntingMoves.sort((a, b) => a.distance - b.distance)[0];
   const dx = bestHunt.targetX - myHead.x;
   const dy = bestHunt.targetY - myHead.y;
-  
+
   if (Math.abs(dx) > Math.abs(dy)) {
     return dx > 0 ? 'right' : 'left';
   } else {
