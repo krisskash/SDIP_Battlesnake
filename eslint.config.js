@@ -4,6 +4,9 @@ import unicorn from 'eslint-plugin-unicorn';
 
 export default [
   {
+    ignores: ["coverage/**", "node_modules/**", "dist/**"],
+  },
+  {
     files: ['**/*.js'],
     plugins: {
       'eslint-comments': eslintComments,
