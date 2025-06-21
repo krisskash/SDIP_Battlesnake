@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1750464052158" clover="3.2.0">
-  <project timestamp="1750464052158" name="All files">
-    <metrics statements="376" coveredstatements="316" conditionals="340" coveredconditionals="238" methods="56" coveredmethods="45" elements="772" coveredelements="599" complexity="0" loc="376" ncloc="376" packages="3" files="6" classes="6"/>
+<coverage generated="1750465423753" clover="3.2.0">
+  <project timestamp="1750465423753" name="All files">
+    <metrics statements="433" coveredstatements="349" conditionals="401" coveredconditionals="258" methods="62" coveredmethods="48" elements="896" coveredelements="655" complexity="0" loc="433" ncloc="433" packages="3" files="8" classes="8"/>
     <package name="SDIP_Battlesnake">
       <metrics statements="36" coveredstatements="18" conditionals="14" coveredconditionals="5" methods="10" coveredmethods="3"/>
       <file name="server.js" path="C:\Website\SDIP_Battlesnake\server.js">
@@ -45,15 +45,15 @@
       </file>
     </package>
     <package name="SDIP_Battlesnake.logic">
-      <metrics statements="297" coveredstatements="258" conditionals="294" coveredconditionals="203" methods="43" coveredmethods="39"/>
+      <metrics statements="353" coveredstatements="290" conditionals="355" coveredconditionals="223" methods="48" coveredmethods="41"/>
       <file name="food.js" path="C:\Website\SDIP_Battlesnake\logic\food.js">
         <metrics statements="52" coveredstatements="51" conditionals="44" coveredconditionals="38" methods="5" coveredmethods="5"/>
-        <line num="10" count="21" type="stmt"/>
-        <line num="11" count="21" type="stmt"/>
-        <line num="12" count="21" type="stmt"/>
-        <line num="13" count="21" type="stmt"/>
-        <line num="16" count="21" type="cond" truecount="2" falsecount="0"/>
-        <line num="17" count="1" type="stmt"/>
+        <line num="10" count="22" type="stmt"/>
+        <line num="11" count="22" type="stmt"/>
+        <line num="12" count="22" type="stmt"/>
+        <line num="13" count="22" type="stmt"/>
+        <line num="16" count="22" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="2" type="stmt"/>
         <line num="21" count="20" type="stmt"/>
         <line num="25" count="20" type="stmt"/>
         <line num="28" count="20" type="stmt"/>
@@ -193,21 +193,80 @@
         <line num="196" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="197" count="0" type="stmt"/>
       </file>
+      <file name="movement.js" path="C:\Website\SDIP_Battlesnake\logic\movement.js">
+        <metrics statements="56" coveredstatements="32" conditionals="61" coveredconditionals="20" methods="5" coveredmethods="2"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="35" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="42" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="47" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="52" count="1" type="cond" truecount="4" falsecount="1"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="57" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="70" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="76" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="77" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="78" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="79" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="81" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="83" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="88" count="1" type="cond" truecount="2" falsecount="4"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="93" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="96" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="97" count="0" type="stmt"/>
+        <line num="98" count="0" type="stmt"/>
+        <line num="104" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="106" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="107" count="0" type="stmt"/>
+        <line num="109" count="0" type="stmt"/>
+        <line num="113" count="1" type="stmt"/>
+        <line num="114" count="1" type="stmt"/>
+        <line num="115" count="1" type="stmt"/>
+        <line num="118" count="0" type="stmt"/>
+        <line num="119" count="0" type="stmt"/>
+      </file>
       <file name="safety.js" path="C:\Website\SDIP_Battlesnake\logic\safety.js">
         <metrics statements="87" coveredstatements="67" conditionals="88" coveredconditionals="57" methods="14" coveredmethods="12"/>
-        <line num="7" count="7" type="stmt"/>
-        <line num="8" count="7" type="stmt"/>
-        <line num="9" count="7" type="stmt"/>
-        <line num="10" count="7" type="stmt"/>
-        <line num="13" count="7" type="stmt"/>
-        <line num="21" count="7" type="stmt"/>
-        <line num="30" count="7" type="cond" truecount="1" falsecount="1"/>
-        <line num="31" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="32" count="7" type="cond" truecount="1" falsecount="1"/>
-        <line num="33" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="36" count="7" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="21" count="8" type="stmt"/>
+        <line num="30" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="33" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="8" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
-        <line num="41" count="7" type="stmt"/>
+        <line num="41" count="8" type="stmt"/>
         <line num="42" count="11" type="stmt"/>
         <line num="44" count="11" type="stmt"/>
         <line num="46" count="33" type="cond" truecount="5" falsecount="0"/>
@@ -216,7 +275,7 @@
         <line num="51" count="23" type="cond" truecount="2" falsecount="2"/>
         <line num="52" count="23" type="cond" truecount="3" falsecount="1"/>
         <line num="53" count="23" type="cond" truecount="4" falsecount="0"/>
-        <line num="58" count="7" type="stmt"/>
+        <line num="58" count="8" type="stmt"/>
         <line num="59" count="11" type="cond" truecount="2" falsecount="0"/>
         <line num="61" count="4" type="stmt"/>
         <line num="62" count="4" type="stmt"/>
@@ -229,44 +288,44 @@
         <line num="76" count="48" type="cond" truecount="4" falsecount="0"/>
         <line num="78" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="79" count="2" type="stmt"/>
-        <line num="87" count="7" type="stmt"/>
-        <line num="88" count="7" type="stmt"/>
-        <line num="89" count="28" type="cond" truecount="2" falsecount="0"/>
-        <line num="91" count="18" type="stmt"/>
-        <line num="94" count="18" type="stmt"/>
-        <line num="97" count="18" type="cond" truecount="2" falsecount="0"/>
+        <line num="87" count="8" type="stmt"/>
+        <line num="88" count="8" type="stmt"/>
+        <line num="89" count="32" type="cond" truecount="2" falsecount="0"/>
+        <line num="91" count="22" type="stmt"/>
+        <line num="94" count="22" type="stmt"/>
+        <line num="97" count="22" type="cond" truecount="2" falsecount="0"/>
         <line num="98" count="1" type="stmt"/>
-        <line num="102" count="18" type="cond" truecount="3" falsecount="1"/>
+        <line num="102" count="22" type="cond" truecount="3" falsecount="1"/>
         <line num="104" count="0" type="stmt"/>
         <line num="105" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="108" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="109" count="0" type="stmt"/>
         <line num="110" count="0" type="stmt"/>
-        <line num="115" count="7" type="stmt"/>
-        <line num="122" count="18" type="stmt"/>
-        <line num="123" count="18" type="stmt"/>
-        <line num="124" count="18" type="stmt"/>
-        <line num="125" count="18" type="stmt"/>
-        <line num="128" count="18" type="stmt"/>
-        <line num="129" count="18" type="stmt"/>
+        <line num="115" count="8" type="stmt"/>
+        <line num="122" count="22" type="stmt"/>
+        <line num="123" count="22" type="stmt"/>
+        <line num="124" count="22" type="stmt"/>
+        <line num="125" count="22" type="stmt"/>
+        <line num="128" count="22" type="stmt"/>
+        <line num="129" count="22" type="stmt"/>
         <line num="130" count="28" type="stmt"/>
         <line num="131" count="85" type="stmt"/>
-        <line num="136" count="18" type="stmt"/>
-        <line num="137" count="6494" type="stmt"/>
-        <line num="138" count="6494" type="stmt"/>
-        <line num="140" count="6494" type="cond" truecount="8" falsecount="0"/>
-        <line num="143" count="4875" type="stmt"/>
-        <line num="146" count="1619" type="stmt"/>
-        <line num="149" count="1619" type="stmt"/>
-        <line num="150" count="1619" type="stmt"/>
-        <line num="151" count="1619" type="stmt"/>
-        <line num="152" count="1619" type="stmt"/>
-        <line num="155" count="18" type="stmt"/>
-        <line num="162" count="78" type="cond" truecount="4" falsecount="0"/>
-        <line num="163" count="23" type="stmt"/>
-        <line num="164" count="15" type="stmt"/>
-        <line num="165" count="22" type="stmt"/>
-        <line num="166" count="18" type="stmt"/>
+        <line num="136" count="22" type="stmt"/>
+        <line num="137" count="8434" type="stmt"/>
+        <line num="138" count="8434" type="stmt"/>
+        <line num="140" count="8434" type="cond" truecount="8" falsecount="0"/>
+        <line num="143" count="6331" type="stmt"/>
+        <line num="146" count="2103" type="stmt"/>
+        <line num="149" count="2103" type="stmt"/>
+        <line num="150" count="2103" type="stmt"/>
+        <line num="151" count="2103" type="stmt"/>
+        <line num="152" count="2103" type="stmt"/>
+        <line num="155" count="22" type="stmt"/>
+        <line num="162" count="82" type="cond" truecount="4" falsecount="0"/>
+        <line num="163" count="24" type="stmt"/>
+        <line num="164" count="16" type="stmt"/>
+        <line num="165" count="23" type="stmt"/>
+        <line num="166" count="19" type="stmt"/>
         <line num="177" count="0" type="stmt"/>
         <line num="178" count="0" type="stmt"/>
         <line num="181" count="0" type="cond" truecount="0" falsecount="7"/>
@@ -357,52 +416,56 @@
       </file>
     </package>
     <package name="SDIP_Battlesnake.utils">
-      <metrics statements="43" coveredstatements="40" conditionals="32" coveredconditionals="30" methods="3" coveredmethods="3"/>
+      <metrics statements="44" coveredstatements="41" conditionals="32" coveredconditionals="30" methods="4" coveredmethods="4"/>
       <file name="floodFill.js" path="C:\Website\SDIP_Battlesnake\utils\floodFill.js">
         <metrics statements="43" coveredstatements="40" conditionals="32" coveredconditionals="30" methods="3" coveredmethods="3"/>
-        <line num="10" count="18" type="cond" truecount="5" falsecount="1"/>
+        <line num="10" count="22" type="cond" truecount="5" falsecount="1"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="16" count="18" type="stmt"/>
+        <line num="16" count="22" type="stmt"/>
         <line num="17" count="31" type="stmt"/>
         <line num="18" count="104" type="cond" truecount="4" falsecount="0"/>
         <line num="19" count="5" type="stmt"/>
-        <line num="25" count="13" type="stmt"/>
-        <line num="26" count="13" type="stmt"/>
-        <line num="27" count="13" type="stmt"/>
-        <line num="30" count="13" type="stmt"/>
-        <line num="33" count="13" type="stmt"/>
-        <line num="34" count="571" type="stmt"/>
-        <line num="35" count="571" type="stmt"/>
-        <line num="38" count="571" type="stmt"/>
-        <line num="45" count="571" type="stmt"/>
-        <line num="46" count="2284" type="stmt"/>
-        <line num="49" count="2284" type="cond" truecount="6" falsecount="0"/>
-        <line num="51" count="341" type="stmt"/>
-        <line num="55" count="1943" type="cond" truecount="2" falsecount="0"/>
-        <line num="56" count="1186" type="stmt"/>
-        <line num="60" count="757" type="stmt"/>
-        <line num="61" count="757" type="stmt"/>
+        <line num="25" count="17" type="stmt"/>
+        <line num="26" count="17" type="stmt"/>
+        <line num="27" count="17" type="stmt"/>
+        <line num="30" count="17" type="stmt"/>
+        <line num="33" count="17" type="stmt"/>
+        <line num="34" count="1055" type="stmt"/>
+        <line num="35" count="1055" type="stmt"/>
+        <line num="38" count="1055" type="stmt"/>
+        <line num="45" count="1055" type="stmt"/>
+        <line num="46" count="4220" type="stmt"/>
+        <line num="49" count="4220" type="cond" truecount="6" falsecount="0"/>
+        <line num="51" count="517" type="stmt"/>
+        <line num="55" count="3703" type="cond" truecount="2" falsecount="0"/>
+        <line num="56" count="2466" type="stmt"/>
+        <line num="60" count="1237" type="stmt"/>
+        <line num="61" count="1237" type="stmt"/>
         <line num="62" count="1593" type="stmt"/>
         <line num="63" count="5363" type="cond" truecount="4" falsecount="0"/>
         <line num="64" count="199" type="stmt"/>
         <line num="65" count="199" type="stmt"/>
         <line num="68" count="1593" type="cond" truecount="2" falsecount="0"/>
-        <line num="71" count="757" type="cond" truecount="2" falsecount="0"/>
-        <line num="72" count="558" type="stmt"/>
-        <line num="73" count="558" type="stmt"/>
-        <line num="78" count="13" type="stmt"/>
-        <line num="88" count="4" type="stmt"/>
-        <line num="89" count="4" type="stmt"/>
-        <line num="90" count="4" type="stmt"/>
-        <line num="93" count="4" type="stmt"/>
-        <line num="101" count="4" type="stmt"/>
-        <line num="109" count="4" type="stmt"/>
-        <line num="110" count="16" type="stmt"/>
-        <line num="113" count="16" type="cond" truecount="5" falsecount="1"/>
-        <line num="116" count="16" type="stmt"/>
-        <line num="120" count="4" type="stmt"/>
+        <line num="71" count="1237" type="cond" truecount="2" falsecount="0"/>
+        <line num="72" count="1038" type="stmt"/>
+        <line num="73" count="1038" type="stmt"/>
+        <line num="78" count="17" type="stmt"/>
+        <line num="88" count="5" type="stmt"/>
+        <line num="89" count="5" type="stmt"/>
+        <line num="90" count="5" type="stmt"/>
+        <line num="93" count="5" type="stmt"/>
+        <line num="101" count="5" type="stmt"/>
+        <line num="109" count="5" type="stmt"/>
+        <line num="110" count="20" type="stmt"/>
+        <line num="113" count="20" type="cond" truecount="5" falsecount="1"/>
+        <line num="116" count="20" type="stmt"/>
+        <line num="120" count="5" type="stmt"/>
         <line num="122" count="0" type="stmt"/>
         <line num="124" count="0" type="stmt"/>
+      </file>
+      <file name="visualization.js" path="C:\Website\SDIP_Battlesnake\utils\visualization.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="9" count="1" type="stmt"/>
       </file>
     </package>
   </project>

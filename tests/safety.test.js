@@ -14,14 +14,24 @@ function mockIsMoveSafe(gameState, move) {
     return false;
   }
   
-  // Check for self collisions - fix this part
+  // Check for self collisions
   for (const segment of gameState.you.body) {
     if (newPos.x === segment.x && newPos.y === segment.y) {
       return false;
     }
   }
   
-  // Other checks remain the same
+  // Check for other snake collisions
+  if (gameState.snakes) {
+    for (const snake of gameState.snakes) {
+      for (const segment of snake.body) {
+        if (newPos.x === segment.x && newPos.y === segment.y) {
+          return false;
+        }
+      }
+    }
+  }
+  
   return true;
 }
 

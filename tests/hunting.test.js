@@ -341,7 +341,7 @@ describe('Hunting Module Tests', () => {
       
       const result = huntSmallerSnake(gameState, isMoveSafe, openSpace);
       // Just skip this test
-      expect(true).toBe(true);
+      expect(true).toBe(true); // Skip this test for now
     });
 
     it('should return null when no safe moves to pursue', () => {
@@ -446,7 +446,7 @@ describe('Hunting Module Tests', () => {
       
       const result = huntSmallerSnake(mockGameState, isMoveSafe, openSpace);
       // Changed to match the actual behavior rather than expecting a specific direction
-      expect(['right', 'up']).toContain(result);
+      expect(['right', 'up']).toContain(result); // Accept either direction
     });
   });
 });
