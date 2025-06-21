@@ -3,7 +3,7 @@
  * These tests verify that our snake can correctly calculate open space
  * to avoid getting trapped and make intelligent movement decisions.
  */
-import { floodFill, calculateOpenSpace } from '../floodFill.js';
+import { calculateOpenSpace, floodFill } from '../utils/floodFill.js';
 
 // Test suite for the flood fill algorithm
 describe('Flood Fill Algorithm', () => {

@@ -60,12 +60,18 @@ battlesnake play --width 9 --height 9 --name Terminator1 --url http://localhost:
 ## Snake Logic & Strategy
 
 Our snake logic includes:
--  Avoiding walls, self, and other snakes
--  Eating food when health is low
--  Seeking the largest open space (flood fill)
--  Avoiding head-to-head collisions with equal/longer snakes
--  Hunting smaller snakes (aggressive mode)
--  Tail-chasing logic (safe moves when no food is needed)
+- Avoiding collisions with walls, itself, and other snakes
+- Prioritizing food when health drops below a threshold
+- Seeking the largest open space using a custom flood fill algorithm (`floodFill.js`)
+- Avoiding head-to-head collisions with equal or longer snakes
+- Hunting smaller snakes when in aggressive mode
+- Tail-chasing for safe moves when food is not urgently needed
+- Evaluating all possible moves and scoring them based on safety and opportunity
+- Avoiding traps and dead ends by simulating future moves
+- Preferring moves that keep the snake's body flexible and away from tight spaces
+- Adapting strategy dynamically based on board state (number of snakes, food, hazards)
+- Avoiding hazard tiles (if present in the game mode)
+- Tracking enemy snake positions and predicting their likely moves
 
 Open space is calculated with our custom `floodFill.js`.
 
@@ -103,10 +109,17 @@ npm test
 
 ---
 
-##  GenAI Usage
+## GenAI Usage
 
-We used AI assistance (ChatGPT) to:
-- Generate JSDoc comments
-- Explain algorithmic steps
+We leveraged AI assistance (ChatGPT and GitHub Copilot) throughout the project to:
+- Generate and refine JSDoc comments for improved code documentation
+- Suggest and automate unit and integration test cases
+- Refactor and optimize code for readability and performance
+- Brainstorm and validate snake logic and strategy ideas
+- Troubleshoot bugs and resolve errors during development
+- Draft and polish markdown documentation (including this README)
+- Research best practices for Node.js, Express, and Battlesnake-specific patterns
+
+All AI-generated content was reviewed and integrated by the development team to ensure quality and correctness.
 
 All code was manually reviewed and integrated by the development team.
