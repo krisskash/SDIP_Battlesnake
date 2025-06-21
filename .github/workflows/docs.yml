@@ -1,0 +1,32 @@
+name: Generate JsDoc
+
+on:
+  push:
+    branches: [main, dev]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Add this line to allow writing to gh-pages branch
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate documentation
+        run: npm run docs
+
+      - name: Deploy documentation
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        with:
+          folder: docs
+          branch: gh-pages

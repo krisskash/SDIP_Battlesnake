@@ -1,36 +1,48 @@
-name: Enforce Test Coverage
+name: Test Coverage at 50% Minimum
 
 on:
   pull_request:
-    branches: [main, develop]
+    branches: [main, dev]
+  push:
+    branches: [main, dev]
 
 jobs:
   coverage:
     runs-on: ubuntu-latest
+    env:
+      MIN_COVERAGE: 50 # Minimum coverage percentage required
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install
 
-      - name: Run Jest with coverage
-        run: npx jest --coverage
+      - name: Run tests with coverage
+        run: npm test --coverage
 
-      - name: Check coverage threshold (fail under 50%)
+      - name: Check coverage threshold
         run: |
-          COVERAGE=$(npx jest --coverage --json --outputFile=coverage.json && cat coverage/coverage-summary.json | grep "lines" | awk '{print $2}' | tr -d ',')
-          echo "Lines coverage: $COVERAGE"
-          COVERAGE_INT=${COVERAGE%.*}
-          if [ "$COVERAGE_INT" -lt 50 ]; then
-            echo "❌ Coverage is below 50%!"
+          COVERAGE=$(cat coverage/coverage-summary.json | jq -r '.total.lines.pct')
+          echo "Lines coverage: $COVERAGE%"
+          
+          if (( $(echo "$COVERAGE < $MIN_COVERAGE" | bc -l) )); then
+            echo "❌ Coverage is below $MIN_COVERAGE% (actual: $COVERAGE%)!"
             exit 1
           else
-            echo "✅ Coverage is acceptable."
+            echo "✅ Coverage is acceptable ($COVERAGE% >= $MIN_COVERAGE%)."
           fi
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+          if-no-files-found: error

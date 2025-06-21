@@ -1,4 +1,4 @@
-import { move } from './server.js';
+import { move } from '../server.js';
 
 test('should prevent self-collision', () => {
   const gameState = {

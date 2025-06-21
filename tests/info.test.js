@@ -1,4 +1,4 @@
-import runServer from './server.js';
+import runServer from '../server.js';
 
 describe('info()', () => {
   it('should return the correct Battlesnake info', () => {

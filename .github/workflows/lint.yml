@@ -1,27 +1,29 @@
-name: Lint and Format
+name: Lint Code And Prettier Formatting Check
 
 on:
   pull_request:
-    branches: [main, develop]
+    branches: [main, dev]
+  push:
+    branches: [main, dev]
 
 jobs:
   lint:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+        
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
+          cache: 'npm'
+          
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
-
+        run: npm install
+        
       - name: Run ESLint
-        run: npx eslint . --ext .js
-
-      - name: Run Prettier check
-        run: npx prettier . --check
+        run: npx eslint . --ignore-pattern "coverage/**"
+        
+      - name: Check formatting with Prettier
+        run: npx prettier --write .

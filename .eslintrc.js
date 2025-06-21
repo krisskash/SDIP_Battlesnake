@@ -21,6 +21,6 @@ module.exports = {
     'jest/globals': true
   },
   rules: {
-    // Your custom rules here
+    // custom rules here
   }
 };
