@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1750465423753" clover="3.2.0">
-  <project timestamp="1750465423753" name="All files">
-    <metrics statements="433" coveredstatements="349" conditionals="401" coveredconditionals="258" methods="62" coveredmethods="48" elements="896" coveredelements="655" complexity="0" loc="433" ncloc="433" packages="3" files="8" classes="8"/>
+<coverage generated="1750466337158" clover="3.2.0">
+  <project timestamp="1750466337158" name="All files">
+    <metrics statements="433" coveredstatements="351" conditionals="401" coveredconditionals="258" methods="62" coveredmethods="50" elements="896" coveredelements="659" complexity="0" loc="433" ncloc="433" packages="3" files="8" classes="8"/>
     <package name="SDIP_Battlesnake">
-      <metrics statements="36" coveredstatements="18" conditionals="14" coveredconditionals="5" methods="10" coveredmethods="3"/>
+      <metrics statements="36" coveredstatements="20" conditionals="14" coveredconditionals="5" methods="10" coveredmethods="5"/>
       <file name="server.js" path="C:\Website\SDIP_Battlesnake\server.js">
-        <metrics statements="36" coveredstatements="18" conditionals="14" coveredconditionals="5" methods="10" coveredmethods="3"/>
+        <metrics statements="36" coveredstatements="20" conditionals="14" coveredconditionals="5" methods="10" coveredmethods="5"/>
         <line num="5" count="1" type="stmt"/>
         <line num="15" count="2" type="stmt"/>
         <line num="16" count="2" type="stmt"/>
@@ -24,24 +24,24 @@
         <line num="39" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="40" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
-        <line num="48" count="1" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
+        <line num="48" count="3" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
+        <line num="51" count="3" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="55" count="3" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
         <line num="57" count="0" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
+        <line num="60" count="3" type="stmt"/>
         <line num="61" count="0" type="stmt"/>
-        <line num="64" count="1" type="stmt"/>
+        <line num="64" count="3" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
         <line num="66" count="0" type="stmt"/>
-        <line num="69" count="1" type="stmt"/>
+        <line num="69" count="3" type="stmt"/>
         <line num="70" count="0" type="stmt"/>
         <line num="71" count="0" type="stmt"/>
-        <line num="74" count="1" type="stmt"/>
-        <line num="75" count="0" type="stmt"/>
-        <line num="78" count="1" type="stmt"/>
+        <line num="74" count="3" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="78" count="3" type="stmt"/>
       </file>
     </package>
     <package name="SDIP_Battlesnake.logic">

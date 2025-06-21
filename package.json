@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --detectOpenHandles",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
     "format": "prettier --write .",
     "docs": "jsdoc -c jsdoc.json"
   },
@@ -33,6 +33,7 @@
     "globals": "^16.1.0",
     "jest": "^30.0.2",
     "jsdoc": "^4.0.4",
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "supertest": "^7.1.1"
   }
 }
