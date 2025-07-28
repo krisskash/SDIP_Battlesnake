@@ -31,7 +31,7 @@
     "eslint-plugin-sonarjs": "^3.0.2",
     "eslint-plugin-unicorn": "^59.0.1",
     "globals": "^16.1.0",
-    "jest": "^30.0.2",
+    "jest": "^30.0.5",
     "jsdoc": "^4.0.4",
     "prettier": "^3.5.3",
     "supertest": "^7.1.1"
