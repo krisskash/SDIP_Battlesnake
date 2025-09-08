@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.27.2",
-    "@eslint/js": "^9.26.0",
+    "@eslint/js": "^9.35.0",
     "clean-jsdoc-theme": "^4.3.0",
     "eslint": "^9.26.0",
     "eslint-config-prettier": "^10.1.3",
